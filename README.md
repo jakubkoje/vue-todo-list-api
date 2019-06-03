@@ -1,4 +1,4 @@
-# vue-todo-list-api
+# Todo List API
 
 A backend for the todolist app.
 
