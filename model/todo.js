@@ -5,7 +5,7 @@ const todoSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		min: 4,
-		max: 256
+		max: 20
 	},
 	completed: {
 		type: Boolean,

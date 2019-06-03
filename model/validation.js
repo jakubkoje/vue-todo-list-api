@@ -4,7 +4,7 @@ const addValidation = data => {
 	const schema = {
 		title: Joi.string()
 			.min(4)
-			.max(256)
+			.max(20)
 			.required()
 	};
 	return Joi.validate(data, schema);

@@ -43,7 +43,20 @@ app.get("/get-todos", (req, res) => {
 app.delete("/del-todo/:id", (req, res) => {
 	const { id } = req.params;
 	Todo.deleteOne({ _id: id }, (err, result) => {
-		console.log(err, result);
+		console.log(err);
+	});
+	res.json("done");
+});
+
+app.put("/toggle-todo/:id", (req, res) => {
+	const { id } = req.params;
+	Todo.findOne({ _id: id }, (err, todo) => {
+		todo.completed = !todo.completed;
+		todo.save(err => {
+			if (err) {
+				return err;
+			}
+		});
 	});
 	res.json("done");
 });
