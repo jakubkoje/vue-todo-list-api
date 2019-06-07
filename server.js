@@ -8,7 +8,6 @@ const { addValidation } = require("./model/validation");
 
 app.use(express.json());
 app.use(cors());
-dotenv.config();
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 	console.log("connected to db");
