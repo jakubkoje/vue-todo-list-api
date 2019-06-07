@@ -61,4 +61,4 @@ app.put("/toggle-todo/:id", (req, res) => {
 	res.json("done");
 });
 
-app.listen(3000, () => console.log("Server is up."));
+app.listen(process.env.PORT || 3000, () => console.log("Server is up."));
