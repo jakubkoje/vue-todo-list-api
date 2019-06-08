@@ -15,10 +15,8 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 
 app.post("/add-todo", async (req, res) => {
 	const { error } = addValidation(req.body);
-	if (error) return res.status(400).send(error.details[0].message);
+	if (error) return res.status(400).json(error.details[0].message);
 
-	const todoExist = await Todo.findOne({ message: req.body.title });
-	if (todoExist) return res.status(400).send("Todo is already in the list");
 	const todo = new Todo({
 		message: req.body.title
 	});
